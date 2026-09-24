@@ -34,7 +34,7 @@ EKS hosts them.
 
 ## Time Estimate
 
-Lecture: 75 min, Lab: 60 min
+Reading: 75 min · Hands-on: 60 min
 
 ## Concepts
 

@@ -1,6 +1,6 @@
-# Online Boutique on Kubernetes — A College-Level Curriculum
+# Online Boutique on Kubernetes — A Hands-On Tutorial
 
-A complete, semester-style guided tutorial built around a **real, working project**: Google's
+A structured, project-based tutorial built around a **real, working system**: Google's
 [Online Boutique](https://github.com/GoogleCloudPlatform/microservices-demo) (11 microservices)
 deployed to a locally-emulated EKS cluster (Floci + k3s) on an Apple Silicon Mac.
 
@@ -72,14 +72,13 @@ Sibling repositories used as the tutorial's lab environment:
 
 ## How to use
 
-- **Self-study:** read modules in order; labs assume the cluster from Module 00/06 is running.
-- **Instructor-led:** each module maps to ~2–3 lecture + lab hours; quizzes build toward the
-  final exam (Module 12).
-- **Prereqs throughout:** each module lists the earlier modules you need.
+- Follow the modules in order; labs assume the cluster from Module 00/06 is running.
+- Each module lists the earlier modules you need as prerequisites.
+- Quizzes throughout build toward the final capstone (Module 12).
 
 ## Course outcomes
 
-By the end of this course you will be able to:
+By the end of this tutorial you will be able to:
 
 1. Explain and create Docker images (multi-stage, cross-arch) and run containers.
 2. Describe the full Kubernetes object model and deploy workloads with Deployments/Services.

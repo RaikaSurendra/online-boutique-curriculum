@@ -1,64 +1,48 @@
-{% include header.html %}
-</div>
-  <div class="container-lg p-responsive">
-    <div class="text-center my-3 my-md-6">
-      <p class="alt-lead text-blue">{{ page.meta.part }}</p>
-      <h1 class="alt-h1">{{ page.title }}</h1>
-      {% if page.meta.subtitle %}<p class="alt-lead text-gray col-md-10 mx-auto">{{ page.meta.subtitle }}</p>{% endif %}
-    </div>
-  </div>
+---
+layout: default
+---
 
-  <div class="container-lg p-responsive">
-    <div class="markdown-body boxed">
-      {{ content }}
-    </div>
-  </div>
+<p class="breadcrumb"><a href="{{ '/' | relative_url }}">&larr; Syllabus</a></p>
 
-  <!-- module prev/next navigation -->
-  {% assign syllabus = site.data.syllabus.modules %}
-  {% for item in syllabus %}
-    {% if item.id == page.slug %}
-      {% assign index = forloop.index0 %}
-      {% assign prevIndex = index | minus: 1 %}
-      {% assign nextIndex = index | plus: 1 %}
-      {% if prevIndex >= 0 and syllabus[prevIndex] %}
-        {% assign prev = syllabus[prevIndex] %}
-      {% endif %}
-      {% if nextIndex < syllabus.size and syllabus[nextIndex] %}
-        {% assign next = syllabus[nextIndex] %}
-      {% endif %}
-    {% endif %}
-  {% endfor %}
+<article class="module">
+  <header class="module-head">
+    <span class="pill">{{ page.meta.part }}</span>
+    <h1>{{ page.title }}</h1>
+    {% if page.meta.subtitle %}<p class="module-sub">{{ page.meta.subtitle }}</p>{% endif %}
+  </header>
 
-  <div class="container-lg p-responsive">
-    <div class="pagination clearfix mt-5 mb-6">
-      {% if prev %}
-      <div class="left">
-        <a class="BlockLink" href="{{ prev.id | relative_url }}/">
-          <span class="BlockLink-arrow">Previous</span>
-          <span class="BlockLink-label">{{ prev.num }} — {{ prev.title }}</span>
-        </a>
-      </div>
-      {% endif %}
-      {% if next %}
-      <div class="right">
-        <a class="BlockLink" href="{{ next.id | relative_url }}/">
-          <span class="BlockLink-arrow">Next</span>
-          <span class="BlockLink-label">{{ next.num }} — {{ next.title }}</span>
-        </a>
-      </div>
-      {% endif %}
-    </div>
-    <p class="text-center mb-6"><a href="{{ '/' | relative_url }}">&larr; Back to Syllabus</a></p>
-  </div>
+  <div class="markdown">{{ content }}</div>
+</article>
 
-<script type="text/javascript">
-  (function (w, d) {
-    var b = d.getElementsByTagName('body')[0];
-    var s = d.createElement("script"); s.async = true;
-    s.src = "https://cdnjs.cloudflare.com/ajax/libs/anchor-js/4.3.1/anchor.min.js";
-    w.__anchors = [];
-    b.appendChild(s);
-  }(window, document));
-</script>
-{% include footer.html %}
+{% assign syllabus = site.data.syllabus.modules %}
+{% for item in syllabus %}
+  {% if item.id == page.slug %}
+    {% assign index = forloop.index0 %}
+    {% assign prevIndex = index | minus: 1 %}
+    {% assign nextIndex = index | plus: 1 %}
+    {% if prevIndex >= 0 and syllabus[prevIndex] %}{% assign prev = syllabus[prevIndex] %}{% endif %}
+    {% if nextIndex < syllabus.size and syllabus[nextIndex] %}{% assign next = syllabus[nextIndex] %}{% endif %}
+  {% endif %}
+{% endfor %}
+
+<nav class="pager" aria-label="Module navigation">
+  {% if prev %}
+  <a class="pager-link pager-prev" href="{{ prev.id | relative_url }}/">
+    <span class="pager-dir">&larr;&nbsp; Previous</span>
+    <span class="pager-title">{{ prev.num }} — {{ prev.title }}</span>
+  </a>
+  {% else %}
+  <span class="pager-link pager-prev is-ghost"><span class="pager-dir">&larr;&nbsp; Previous</span><span class="pager-title">You're at the start</span></span>
+  {% endif %}
+
+  {% if next %}
+  <a class="pager-link pager-next" href="{{ next.id | relative_url }}/">
+    <span class="pager-dir">Next &rarr;</span>
+    <span class="pager-title">{{ next.num }} — {{ next.title }}</span>
+  </a>
+  {% else %}
+  <span class="pager-link pager-next is-ghost"><span class="pager-dir">Next &rarr;</span><span class="pager-title">That was the last module</span></span>
+  {% endif %}
+</nav>
+
+<p class="back-top"><a href="{{ '/' | relative_url }}">&larr; Back to Syllabus</a></p>

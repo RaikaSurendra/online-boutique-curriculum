@@ -1,7 +1,6 @@
-// Add anchor links to every heading in article content
+// Add anchor links to headings inside article content
 document.addEventListener('DOMContentLoaded', function () {
-  var headings = document.querySelectorAll('.markdown-body h2, .markdown-body h3, .markdown-body h4');
-  headings.forEach(function (h) {
+  document.querySelectorAll('.markdown h2, .markdown h3, .markdown h4').forEach(function (h) {
     if (!h.id) return;
     var a = document.createElement('a');
     a.className = 'anchor';

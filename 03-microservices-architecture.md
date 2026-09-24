@@ -40,7 +40,7 @@ By the end of this module, you will be able to:
 
 ## Time Estimate
 
-Lecture: 90 min, Lab: 45 min.
+Reading: 90 min · Hands-on: 45 min
 
 ## Concepts
 

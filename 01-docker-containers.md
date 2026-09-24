@@ -35,7 +35,7 @@ service, so you also need the upstream clone produced by `onlineBoutique/scripts
 
 ## Time estimate
 
-Lecture: 120 min, Lab: 90 min.
+Reading: 120 min · Hands-on: 90 min
 
 ## Concepts
 

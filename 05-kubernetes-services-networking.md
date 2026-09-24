@@ -49,7 +49,7 @@ wiring). The `online-boutique` namespace must be deployed.
 
 ## Time estimate
 
-Lecture: 75 min, Lab: 45 min.
+Reading: 75 min · Hands-on: 45 min
 
 ## Concepts
 

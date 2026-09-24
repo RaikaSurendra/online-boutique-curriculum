@@ -1,0 +1,188 @@
+// =============================================================
+// Tutorial component styles, layered on pages-themes/hacker.
+// Design language: dark terminal (#151515), neon green (#b5e853),
+// electric blue links (#63c0f5), monospace throughout.
+// =============================================================
+
+// ---- layout & type ----
+.container { max-width: 880px; }
+
+.d-flex { display: flex; align-items: baseline; justify-content: space-between; gap: 16px; flex-wrap: wrap; }
+
+.baseline { align-items: baseline; }
+
+// ---- top status bar ----
+.topbar {
+  background: #0b0b0b;
+  border-bottom: 1px solid rgba(181, 232, 83, 0.25);
+  padding: 6px 0;
+  font-size: 13px;
+  color: #888;
+  font-family: Monaco, "Bitstream Vera Sans Mono", "Lucida Console", Terminal, monospace;
+}
+.topbar-path { color: #63c0f5; }
+.topbar-nav { display: flex; gap: 16px; }
+.topbar-nav a { color: #888; text-decoration: none; }
+.topbar-nav a:hover { color: #b5e853; }
+.topbar-nav a.active { color: #b5e853; }
+
+// ---- header ----
+header { padding: 16px 0 24px; margin: 0 0 28px; }
+header h1 { font-size: 30px; }
+header h2 { font-size: 15px; color: #888; margin-top: -8px; }
+
+// ---- hero (home) ----
+.hero { padding: 8px 0 4px; }
+.hero h1 { font-size: 34px; }
+.hero-sub { color: #aaa; font-size: 16px; max-width: 60ch; }
+.hero-cta { margin: 20px 0 4px; display: flex; gap: 12px; flex-wrap: wrap; }
+
+.btn-primary {
+  background: #b5e853;
+  color: #151515 !important;
+  border-color: #b5e853;
+  text-shadow: none;
+}
+.btn-primary:hover { background: #c6f873; }
+
+// ---- stat bar ----
+.stat-bar {
+  display: flex;
+  gap: 24px;
+  flex-wrap: wrap;
+  padding: 14px 0;
+  margin: 22px 0;
+  border-top: 1px dashed rgba(181, 232, 83, 0.35);
+  border-bottom: 1px dashed rgba(181, 232, 83, 0.35);
+  color: #888;
+  font-size: 14px;
+}
+.stat strong { color: #b5e853; font-weight: bold; }
+
+// ---- syllabus ----
+.part { margin: 0 0 28px; }
+.part-title {
+  font-size: 17px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: #63c0f5;
+  margin: 0 0 10px;
+  border-bottom: 1px dashed rgba(181, 232, 83, 0.35);
+  padding-bottom: 6px;
+}
+.mod-list { list-style: none; margin: 0; padding: 0; }
+.mod-card { margin: 0 0 8px; }
+.mod-link {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 10px 14px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 4px;
+  background: rgba(0, 0, 0, 0.22);
+  text-decoration: none;
+  transition: border-color 0.12s ease, background 0.12s ease;
+}
+.mod-link:hover { border-color: rgba(181, 232, 83, 0.6); background: rgba(0, 0, 0, 0.4); text-decoration: none; }
+.mod-num {
+  font-family: Monaco, monospace;
+  color: #b5e853;
+  font-size: 16px;
+  min-width: 34px;
+}
+.mod-body { flex: 1; }
+.mod-title { display: block; color: #eaeaea; font-weight: bold; font-size: 15px; }
+.mod-sub { display: block; color: #888; font-size: 13px; }
+.mod-arrow { color: #63c0f5; opacity: 0.7; }
+
+// ---- takeaway (home) ----
+.takeaway { margin: 28px 0; }
+.takeaway h2 { font-size: 20px; }
+.tree { color: #aaa; }
+.tree li { margin: 6px 0; }
+
+// ---- callout box ----
+.box {
+  border: 1px dashed rgba(181, 232, 83, 0.45);
+  border-radius: 4px;
+  padding: 16px 20px;
+  margin: 24px 0;
+  background: rgba(0, 0, 0, 0.22);
+}
+.cta-box h2 { font-size: 18px; margin-top: 0; }
+
+// ---- module page ----
+.breadcrumb { margin: 0 0 18px; font-size: 13px; color: #888; }
+.breadcrumb a { color: #63c0f5; }
+
+.module-head { margin: 0 0 26px; border-bottom: 1px dashed rgba(181, 232, 83, 0.35); padding-bottom: 14px; }
+.module-head h1 { font-size: 30px; margin: 10px 0 4px; }
+.module-sub { color: #888; font-size: 15px; margin: 0; }
+.pill {
+  display: inline-block;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: #b5e853;
+  border: 1px solid rgba(181, 232, 83, 0.5);
+  border-radius: 3px;
+  padding: 2px 8px;
+}
+
+.markdown h1 { font-size: 28px; }
+.markdown h2 { font-size: 22px; }
+.markdown h3 { font-size: 18px; }
+.markdown h2 { border-top: 1px dashed rgba(181, 232, 83, 0.25); padding-top: 22px; }
+.markdown h1, .markdown h2, .markdown h3 { scroll-margin-top: 12px; }
+.markdown ul, .markdown ol { color: #d0d0d0; }
+.markdown li { margin: 4px 0; }
+.markdown blockquote { color: #aaa; }
+
+// objectiv block in modules rendered as "Learning Objectives" lists
+.markdown h2:first-of-type { margin-top: 6px; }
+
+// ---- pagination ----
+.pager {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  margin: 32px 0 8px;
+  border-top: 1px dashed rgba(181, 232, 83, 0.35);
+  padding-top: 20px;
+}
+.pager-link {
+  display: block;
+  padding: 10px 14px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 4px;
+  background: rgba(0, 0, 0, 0.22);
+  text-decoration: none;
+  transition: border-color 0.12s ease;
+}
+.pager-link:hover { border-color: rgba(181, 232, 83, 0.6); text-decoration: none; }
+.pager-prev { text-align: left; }
+.pager-next { text-align: right; }
+.pager-dir { display: block; font-size: 12px; text-transform: uppercase; color: #b5e853; letter-spacing: 0.04em; }
+.pager-title { display: block; color: #eaeaea; font-weight: bold; font-size: 14px; margin-top: 3px; }
+.pager-link.is-ghost { opacity: 0.35; pointer-events: none; }
+
+.back-top { text-align: center; margin: 16px 0 8px; font-size: 13px; }
+
+// ---- footer ----
+footer { border-top: 1px dashed rgba(181, 232, 83, 0.35); padding: 20px 0 24px; margin-top: 40px; font-size: 13px; }
+footer a { color: #63c0f5; }
+.footer-note { color: #666; font-size: 12px; margin: 12px 0 0; }
+
+// ---- anchor links ----
+.anchor { opacity: 0; margin-left: 8px; color: #666; text-decoration: none; font-weight: normal; }
+h2:hover .anchor, h3:hover .anchor, h4:hover .anchor { opacity: 1; }
+.anchor:hover { color: #63c0f5; text-decoration: none; }
+
+// ---- responsive ----
+@media (max-width: 700px) {
+  .pager { grid-template-columns: 1fr; }
+  .pager-next { text-align: left; }
+  .d-flex { flex-direction: column; align-items: flex-start; gap: 4px; }
+  .topbar-nav { flex-wrap: wrap; }
+  header h1 { font-size: 24px; }
+}

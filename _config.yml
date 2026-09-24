@@ -1,8 +1,11 @@
 # Site settings
 title: "Online Boutique on Kubernetes"
-description: "A college-level curriculum: microservices, Docker, Kubernetes, and AWS EKS, taught through Google Online Boutique on a locally emulated cluster."
+description: "A hands-on tour of Docker, Kubernetes, microservices & AWS EKS — built on Google Online Boutique running locally."
 url: "https://raikasurendra.github.io"
 baseurl: "/online-boutique-curriculum"
+
+# Theme: pages-themes/hacker (dark terminal aesthetic)
+remote_theme: pages-themes/hacker
 
 # Build settings
 markdown: kramdown
@@ -10,8 +13,6 @@ kramdown:
   input: GFM
   hard_wrap: false
 permalink: pretty
-liquid:
-  error_mode: warn
 
 # Defaults: module pages get the "module" layout automatically
 defaults:
@@ -34,8 +35,7 @@ exclude:
   - Gemfile.lock
   - vendor
   - .gitignore
-  - "*.sh"
-  - "*.ps1"
-  - "*.cmd"
 
-plugins: []
+plugins:
+  - jekyll-remote-theme
+  - jekyll-seo-tag

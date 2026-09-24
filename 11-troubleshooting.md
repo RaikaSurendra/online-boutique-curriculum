@@ -35,7 +35,7 @@ Modules 01, 02, 04, 05, 06, 07, 08. You need a working `kubectl` against `dev-cl
 
 ## Time estimate
 
-Lecture: 60 min, Lab: 90 min.
+Reading: 60 min · Hands-on: 90 min
 
 ## Concepts
 

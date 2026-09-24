@@ -47,7 +47,7 @@ Module 00, 01, 02, 03. You should have already run `scripts/04-deploy.sh` from
 
 ## Time estimate
 
-Lecture: 60 min, Lab: 45 min.
+Reading: 60 min · Hands-on: 45 min
 
 ## Concepts
 

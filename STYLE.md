@@ -1,12 +1,12 @@
-# Style Guide — Online Boutique on Kubernetes Curriculum
+# Style Guide — Online Boutique on Kubernetes Tutorial
 
-All modules in this curriculum MUST follow this format and tone.
+All modules in this tutorial MUST follow this format and tone.
 
 ## Global rules
 
 - Markdown (.md), GitHub-flavored, US English.
 - **No emojis.** No AI/AI-tool mentions. Author is neutral instructor.
-- Audience: undergraduate/graduate CS students with basic programming skills (know what a
+- Audience: developers with basic programming skills (know what a
   terminal, a package manager, and HTTP are). Assume little to no prior Docker/k8s/AWS knowledge.
 - Tone: tutorial + textbook. Explain **why**, not just **how**. Prefer building intuition from
   first principles, then anchor with the real, working example in this repo.

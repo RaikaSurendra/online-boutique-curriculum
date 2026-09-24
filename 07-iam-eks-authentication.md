@@ -34,7 +34,7 @@ and be comfortable that every AWS call is pointed at `http://localhost:4566`.
 
 ## Time Estimate
 
-Lecture: 90 min, Lab: 60 min
+Reading: 90 min · Hands-on: 60 min
 
 ## Concepts
 

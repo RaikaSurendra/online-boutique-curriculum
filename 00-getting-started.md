@@ -34,7 +34,7 @@ the verification pass.
 
 ## Time estimate
 
-Lecture: 45 min, Lab: 30 min.
+Reading: 45 min · Hands-on: 30 min
 
 ## Concepts
 
@@ -59,9 +59,9 @@ By the end of the course you will have: bootstrapped the emulated EKS environmen
 every image for the correct CPU architecture, deployed all twelve applications, watched them serve
 traffic, observed and load-tested them, broken and fixed them, and cleaned everything up.
 
-### How to work through the course
+### How to work through the tutorial
 
-Every module in this curriculum follows one shape, so after this first read each one will feel
+Every module in this tutorial follows one shape, so after this first read each one will feel
 familiar: a set of *Learning Objectives*, the earlier modules you need, a time budget, the
 *Concepts* (theory, built bottom-up with inline definitions), a *Hands-On Lab* (real, runnable
 commands tied to the project scripts), *Common Pitfalls*, *Key Takeaways*, and *Review Questions*
@@ -334,7 +334,7 @@ Module 07 -> IAM & EKS Authentication).
 - The host toolchain is exactly five things: Docker Desktop, aws CLI v2, kubectl ~1.28+, git, and
   your shell.
 - `eksSetup/` bootstraps the cluster; `onlineBoutique/` builds and deploys the shop. All paths in
-  this curriculum point at these two directories.
+  this tutorial point at these two directories.
 - Docker runs three long-lived containers: `floci` (AWS emulator, `:4566`), `floci-eks-dev-cluster`
   (k3s cluster `dev-cluster`, API on `:6500`), and `floci-ecr-registry` (registry:2 ECR sidecar).
 - Healthy environment checks are `docker ps` (three named containers), `kubectl get nodes` (one

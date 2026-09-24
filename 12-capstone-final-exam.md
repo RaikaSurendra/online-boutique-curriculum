@@ -26,7 +26,7 @@ By the end of this module you will be able to:
   one guards against.
 - Explain how this local stack maps to real AWS EKS/ECR, and what changes vs. what stays the
   same.
-- Answer 30 written questions covering the entire curriculum and defend every answer.
+- Answer 30 written questions covering everything in the tutorial and defend every answer.
 
 ## Prerequisites
 
