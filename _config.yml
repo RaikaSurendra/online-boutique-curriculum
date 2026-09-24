@@ -1,0 +1,41 @@
+# Site settings
+title: "Online Boutique on Kubernetes"
+description: "A college-level curriculum: microservices, Docker, Kubernetes, and AWS EKS, taught through Google Online Boutique on a locally emulated cluster."
+url: "https://raikasurendra.github.io"
+baseurl: "/online-boutique-curriculum"
+
+# Build settings
+markdown: kramdown
+kramdown:
+  input: GFM
+  hard_wrap: false
+permalink: pretty
+liquid:
+  error_mode: warn
+
+# Defaults: module pages get the "module" layout automatically
+defaults:
+  - scope:
+      path: ""
+      type: pages
+    values:
+      layout: module
+  - scope:
+      path: "index.md"
+      type: pages
+    values:
+      layout: home
+
+# Exclude repo-internal files from the built site
+exclude:
+  - README.md
+  - STYLE.md
+  - Gemfile
+  - Gemfile.lock
+  - vendor
+  - .gitignore
+  - "*.sh"
+  - "*.ps1"
+  - "*.cmd"
+
+plugins: []

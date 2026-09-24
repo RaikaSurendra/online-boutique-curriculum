@@ -1,0 +1,85 @@
+{% include header.html %}
+</div>
+  <div class="container-lg p-responsive py-4 py-lg-6 my-xl-4 text-center">
+    <h1 class="alt-h1 mb-2 text-white">{{ site.title }}</h1>
+    <p class="f2-light text-white">{{ site.description }}</p>
+  </div>
+</div><!-- ends .full-width started in header.html -->
+
+<div class="container-lg p-responsive">
+  <div class="Box clearfix p-4 p-sm-5 col-md-10 mx-auto mt-6">
+    <div class="overflow-hidden">
+      <p class="f4">
+        A complete, semester-style guided tutorial built around a <strong>real, working project</strong>:
+        Google's <a href="https://github.com/GoogleCloudPlatform/microservices-demo">Online Boutique</a>
+        (11 microservices) deployed to a locally-emulated EKS cluster
+        (<a href="https://floci.io/aws/">Floci</a> + k3s) on an Apple Silicon Mac.
+      </p>
+      <p>Every concept is taught bottom-up and immediately exercised with the actual commands and manifests
+        from the repository. By the end you will have deployed the shop yourself, understood how every piece
+        works, and be able to troubleshoot and extend it.</p>
+    </div>
+  </div>
+</div>
+
+<section class="container-lg p-responsive py-5 py-md-6 my-lg-6">
+  <h2 class="alt-h3 mb-2">
+    <svg height="24" viewBox="0 0 16 16" class="fill-blue d-inline mr-2" aria-label="book"><path fill-rule="evenodd" d="M8 1.5c-2.1-1-4.9-1-7-1v13c2.1 0 4.9 0 7 1 2.1-1 4.9-1 7-1v-13c-2.1 0-4.9 0-7 1zM1.5 2.5c1.6 0 3.1.2 4.5.7v10.6c-1.2-.6-2.9-.8-4.5-.8v-10.5zm6 10.6V2.9c1.4-.5 2.9-.7 4.5-.7v10.6c-1.6 0-3.3.2-4.5.8z"></path></svg>
+    Syllabus
+  </h2>
+
+  {% assign parts = site.data.syllabus.modules | group_by: "part" %}
+  {% for part in parts %}
+  <h3 class="h4 mt-4 mb-2">{{ part.name }}</h3>
+  <table class="a11y-table" style="width:100%">
+    <thead>
+      <tr><th style="width:8%">Module</th><th style="width:30%">Title</th><th style="width:62%">What you will learn</th></tr>
+    </thead>
+    <tbody>
+      {% for m in part.items %}
+      <tr>
+        <td class="criterion"><code>{{ m.num }}</code></td>
+        <td class="criterion"><a href="{{ m.id | relative_url }}/"><strong>{{ m.title }}</strong></a></td>
+        <td>{{ m.subtitle }}</td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+  {% endfor %}
+</section>
+
+<section class="container-lg p-responsive py-5 my-lg-6">
+  <h2 class="alt-h3 mb-3">Course outcomes</h2>
+  <p>By the end of this course you will be able to:</p>
+  <ol class="f4">
+    <li>Explain and create Docker images (multi-stage, cross-arch) and run containers.</li>
+    <li>Describe the full Kubernetes object model and deploy workloads with Deployments/Services.</li>
+    <li>Explain microservice architecture using a real 11-service system.</li>
+    <li>Authenticate to an EKS-style cluster via IAM and understand the token flow.</li>
+    <li>Push/pull from a container registry and understand registry internals.</li>
+    <li>Observe, load-test, troubleshoot, and clean up a real deployment.</li>
+  </ol>
+
+  <h2 class="alt-h3 mb-3 mt-5">Getting the lab environment</h2>
+  <div class="markdown-body">
+{% highlight bash %}
+# Clone the project monorepo
+git clone https://github.com/RaikaSurendra/floci-microservices-online-boutique.git
+cd floci-microservices-online-boutique
+
+# Bootstrap the cluster (Part I prerequisite)
+cd eksSetup && ./scripts/setup-eks.sh
+
+# Deploy the shop (used from Module 03 onward)
+cd ../onlineBoutique
+source scripts/00-env.sh
+scripts/01-fix-eks-auth.sh
+scripts/01-fix-floci-network.sh
+scripts/02-clone-upstream.sh
+scripts/03-build-push-images.sh
+scripts/04-deploy.sh
+{% endhighlight %}
+  </div>
+</section>
+
+{% include footer.html %}
